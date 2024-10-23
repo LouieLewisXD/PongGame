@@ -1,4 +1,3 @@
-# PongGame
 The classic game of pong created using Pygame
 
 Player 1 use W and S
