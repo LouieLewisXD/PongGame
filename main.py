@@ -52,27 +52,27 @@ class Paddle:
                     self.rect.top = 0
             if keys[py.K_s]:
                 if self.rect.bottom < HEIGHT:
-                    self.rect.y += 5
+                    self.rect.y += 7
                 else:
                     self.rect.bottom = HEIGHT
         
         elif self.side == "right" and not ai_player:
             if keys[py.K_UP]:
                 if self.rect.top >= 0:
-                    self.rect.y -= 5
+                    self.rect.y -= 7
                 else:
                     self.rect.top = 0
             if keys[py.K_DOWN]:
                 if self.rect.bottom <= HEIGHT:
-                    self.rect.y += 5
+                    self.rect.y += 7
                 else:
                     self.rect.bottom = HEIGHT
         else:
             if self.rect.top >= 0 and self.rect.bottom <= HEIGHT:
                 if ball.rect.centery > self.rect.centery:
-                    self.rect.centery += 5
+                    self.rect.centery += 7
                 elif ball.rect.centery < self.rect.centery:
-                    self.rect.centery -= 5
+                    self.rect.centery -= 7
             if self.rect.top < 0:
                     self.rect.top = 0
             if self.rect.bottom > HEIGHT:
@@ -102,8 +102,8 @@ class PongBall:
         self.update_move()
     
     def update_move(self):
-        self.rect.x += 15 * math.cos(math.radians(self.deg))
-        self.rect.y -= 15 * math.sin(math.radians(self.deg))
+        self.rect.x += 13 * math.cos(math.radians(self.deg))
+        self.rect.y -= 13 * math.sin(math.radians(self.deg))
         if self.rect.top < 0:
             self.rect.top = 0
         elif self.rect.bottom > HEIGHT:
